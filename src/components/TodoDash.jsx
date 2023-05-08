@@ -1,6 +1,11 @@
 import React from 'react'
 
+
+
 const TodoDash = (props) => {
+    const completed = (e,i) =>{
+        props.onCompleted(e.target.checked, i)
+    }
     return (
         <div>
             <table>
@@ -14,7 +19,7 @@ const TodoDash = (props) => {
                             return (
                                 <tr key={i}>
                                     <td>{items.item}</td>
-                                    <td><input type="checkbox" checked={items.item}  /></td>
+                                    <td><input type="checkbox" checked={items.item} onChange={(e) =>{completed(e,i)}} /></td>
                                 </tr>
                             )
                         })

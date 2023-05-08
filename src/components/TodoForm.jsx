@@ -5,7 +5,7 @@ const TodoForm = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const newItem = {item}
+        const newItem = {item, completed: false}
         props.onNewItem(newItem)
     }
 
