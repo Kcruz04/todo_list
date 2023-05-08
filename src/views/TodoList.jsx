@@ -2,8 +2,8 @@ import React, {useState} from 'react'
 import TodoForm from '../components/TodoForm'
 import TodoDash from '../components/TodoDash'
 
-const todo_list = () => {
-    const [list, setList] = useState = ([])
+const TodoList = () => {
+    const [list, setList] = useState([])
     const newItem = (newItem) => {
         setList([...list, newItem])
     }
@@ -16,4 +16,4 @@ const todo_list = () => {
     )
 }
 
-export default todo_list
+export default TodoList

@@ -6,13 +6,15 @@ const TodoDash = (props) => {
             <table>
                 <thead>
                     <th>List</th>
+                    <th>Completed</th>
                 </thead>
                 <tbody>
                     {
-                        props.list.map((item, i) => {
+                        props.list.map((items, i) => {
                             return (
                                 <tr key={i}>
-                                    <td>{item}</td>
+                                    <td>{items.item}</td>
+                                    <td><input type="checkbox" checked={items.item}  /></td>
                                 </tr>
                             )
                         })
