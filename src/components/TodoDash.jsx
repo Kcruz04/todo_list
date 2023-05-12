@@ -6,9 +6,12 @@ const TodoDash = (props) => {
     const completed = (e,i) =>{
         props.onCompleted(e.target.checked, i)
     }
+    // const remove = (e, i) => {
+    //     props.onremove(e.target, i)
+    // }
     return (
         <div>
-            <table>
+            <table className='table'>
                 <thead>
                     <th>List</th>
                     <th>Completed</th>
@@ -17,9 +20,10 @@ const TodoDash = (props) => {
                     {
                         props.list.map((items, i) => {
                             return (
-                                <tr key={i}>
+                                <tr key={i} style={items.completed ? {textDecorationLine: 'line-through'} : {}} >
                                     <td>{items.item}</td>
-                                    <td><input type="checkbox" checked={items.item} onChange={(e) =>{completed(e,i)}} /></td>
+                                    <td><input type="checkbox" checked={items.i} onChange={(e) =>{completed(e,i)}} /></td>
+                                    <button onClick={() =>{props.onremove(i)}} className="btn btn-dark">Delete</button>
                                 </tr>
                             )
                         })

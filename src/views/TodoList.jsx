@@ -11,15 +11,21 @@ const TodoList = () => {
 
     const complete = (completed,i) =>{
         const checked = [...list]
-        checked [i].item = completed;
+        checked[i].completed = completed;
         setList(checked)
+        console.log(list)
+    }
+    const remove = (i) =>  {
+        const deleted = list.filter((item,index) => index !==i)
+        setList(deleted);
+        console.log(list)
     }
 
     return (
         <div>
             <h1>Todo List</h1>
             <TodoForm onNewItem ={newItem}/>
-            <TodoDash list = {list} onCompleted={complete}/>
+            <TodoDash list = {list} onCompleted={complete} onremove = {remove}/>
         </div>
     )
 }
